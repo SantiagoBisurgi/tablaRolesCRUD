@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<schema attributeFormDefault="unqualified"
+	elementFormDefault="qualified"
+	targetNamespace="http://xmlns.oracle.com/TPSoaMediator/MediatorCRUD/BPELInsert"
+	xmlns="http://www.w3.org/2001/XMLSchema">
+	<element name="process">
+		<complexType>
+			<sequence>
+				<element name="id" type="string"/>
+    <element name="nombre" type="string"/>
+    <element name="id_padre" type="string"/>
+   </sequence>
+		</complexType>
+	</element>
+</schema>

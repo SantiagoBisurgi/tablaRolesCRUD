@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:rol="http://www.exampleRoles.org"
+            targetNamespace="http://www.exampleRoles.org" elementFormDefault="qualified">
+  <xsd:element name="entrada">
+    <xsd:annotation>
+      <xsd:documentation>A sample element</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Rol" type="rol:complexRolType"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:complexType name="complexRolType">
+    <xsd:sequence>
+      <xsd:element name="Operacion" type="xsd:string"/>
+      <xsd:element name="ID" type="xsd:string"/>
+      <xsd:element name="Nombre" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="ID_Padre" type="xsd:string" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="salida">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Response" type="rol:complexRolType"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

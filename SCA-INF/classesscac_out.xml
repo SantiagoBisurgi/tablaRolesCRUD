@@ -1,0 +1,163 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Faults>
+   <Fault>
+      <severity>warning</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='Assign2']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][1]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='from']</loc>
+      <line>84</line>
+      <col/>
+      <file>BPEL/BPELSelect.bpel</file>
+      <name>BPEL/BPELSelect.bpel</name>
+      <fix>Add a predicate to select an element from the sequence.</fix>
+      <msg>The XPath segment "child::ns2:Roles" selects a sequence of elements - a predicate MAY be needed to correctly select an element.</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='Assign2']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][2]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='from']</loc>
+      <line>88</line>
+      <col/>
+      <file>BPEL/BPELSelect.bpel</file>
+      <name>BPEL/BPELSelect.bpel</name>
+      <fix>Add a predicate to select an element from the sequence.</fix>
+      <msg>The XPath segment "child::ns2:Roles" selects a sequence of elements - a predicate MAY be needed to correctly select an element.</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc>/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='process']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='sequence'][@name='main']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='assign'][@name='Assign2']/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='copy'][3]/*[namespace-uri()='http://docs.oasis-open.org/wsbpel/2.0/process/executable'][local-name()='from']</loc>
+      <line>92</line>
+      <col/>
+      <file>BPEL/BPELSelect.bpel</file>
+      <name>BPEL/BPELSelect.bpel</name>
+      <fix>Add a predicate to select an element from the sequence.</fix>
+      <msg>The XPath segment "child::ns2:Roles" selects a sequence of elements - a predicate MAY be needed to correctly select an element.</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>Mediators/MediatorRoles.mplan</file>
+      <name>Mediators/MediatorRoles.mplan</name>
+      <fix/>
+      <msg>La asignación de "{http://www.exampleRoles.org}ID" de origen y de "{http://xmlns.oracle.com/TPSoaMediator/MediatorCRUD/BPELInsert}id" de destino de QName distinto puede generar un XML no válido en función de XSD en caso de un nodo sin hojas. Verifíquelo manualmente si es necesario</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>Mediators/MediatorRoles.mplan</file>
+      <name>Mediators/MediatorRoles.mplan</name>
+      <fix/>
+      <msg>La asignación de "{http://www.exampleRoles.org}Nombre" de origen y de "{http://xmlns.oracle.com/TPSoaMediator/MediatorCRUD/BPELInsert}nombre" de destino de QName distinto puede generar un XML no válido en función de XSD en caso de un nodo sin hojas. Verifíquelo manualmente si es necesario</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>Mediators/MediatorRoles.mplan</file>
+      <name>Mediators/MediatorRoles.mplan</name>
+      <fix/>
+      <msg>La asignación de "{http://www.exampleRoles.org}ID_Padre" de origen y de "{http://xmlns.oracle.com/TPSoaMediator/MediatorCRUD/BPELInsert}id_padre" de destino de QName distinto puede generar un XML no válido en función de XSD en caso de un nodo sin hojas. Verifíquelo manualmente si es necesario</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>Mediators/MediatorRoles.mplan</file>
+      <name>Mediators/MediatorRoles.mplan</name>
+      <fix/>
+      <msg>La asignación de "{http://www.exampleRoles.org}ID" de origen y de "{http://xmlns.oracle.com/TPSoaMediator/MediatorCRUD/BPELSelect}id" de destino de QName distinto puede generar un XML no válido en función de XSD en caso de un nodo sin hojas. Verifíquelo manualmente si es necesario</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>Mediators/MediatorRoles.mplan</file>
+      <name>Mediators/MediatorRoles.mplan</name>
+      <fix/>
+      <msg>La asignación de "{http://xmlns.oracle.com/TPSoaMediator/MediatorCRUD/BPELSelect}id" de origen y de "{http://www.exampleRoles.org}ID" de destino de QName distinto puede generar un XML no válido en función de XSD en caso de un nodo sin hojas. Verifíquelo manualmente si es necesario</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>Mediators/MediatorRoles.mplan</file>
+      <name>Mediators/MediatorRoles.mplan</name>
+      <fix/>
+      <msg>La asignación de "{http://xmlns.oracle.com/TPSoaMediator/MediatorCRUD/BPELSelect}nombre" de origen y de "{http://www.exampleRoles.org}Nombre" de destino de QName distinto puede generar un XML no válido en función de XSD en caso de un nodo sin hojas. Verifíquelo manualmente si es necesario</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>Mediators/MediatorRoles.mplan</file>
+      <name>Mediators/MediatorRoles.mplan</name>
+      <fix/>
+      <msg>La asignación de "{http://xmlns.oracle.com/TPSoaMediator/MediatorCRUD/BPELSelect}id_padre" de origen y de "{http://www.exampleRoles.org}ID_Padre" de destino de QName distinto puede generar un XML no válido en función de XSD en caso de un nodo sin hojas. Verifíquelo manualmente si es necesario</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>Mediators/MediatorRoles.mplan</file>
+      <name>Mediators/MediatorRoles.mplan</name>
+      <fix/>
+      <msg>La asignación de "{http://www.exampleRoles.org}ID" de origen y de "{http://xmlns.oracle.com/TPSoaMediator/MediatorCRUD/BPELDelete}id" de destino de QName distinto puede generar un XML no válido en función de XSD en caso de un nodo sin hojas. Verifíquelo manualmente si es necesario</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>Mediators/MediatorRoles.mplan</file>
+      <name>Mediators/MediatorRoles.mplan</name>
+      <fix/>
+      <msg>La asignación de "{http://www.exampleRoles.org}Nombre" de origen y de "{http://xmlns.oracle.com/TPSoaMediator/MediatorCRUD/BPELDelete}nombre" de destino de QName distinto puede generar un XML no válido en función de XSD en caso de un nodo sin hojas. Verifíquelo manualmente si es necesario</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>Mediators/MediatorRoles.mplan</file>
+      <name>Mediators/MediatorRoles.mplan</name>
+      <fix/>
+      <msg>La asignación de "{http://www.exampleRoles.org}ID_Padre" de origen y de "{http://xmlns.oracle.com/TPSoaMediator/MediatorCRUD/BPELDelete}id_padre" de destino de QName distinto puede generar un XML no válido en función de XSD en caso de un nodo sin hojas. Verifíquelo manualmente si es necesario</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>Mediators/MediatorRoles.mplan</file>
+      <name>Mediators/MediatorRoles.mplan</name>
+      <fix/>
+      <msg>La asignación de "{http://www.exampleRoles.org}ID" de origen y de "{http://xmlns.oracle.com/TPSoaMediator/MediatorCRUD/BPELUpdate}id" de destino de QName distinto puede generar un XML no válido en función de XSD en caso de un nodo sin hojas. Verifíquelo manualmente si es necesario</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>Mediators/MediatorRoles.mplan</file>
+      <name>Mediators/MediatorRoles.mplan</name>
+      <fix/>
+      <msg>La asignación de "{http://www.exampleRoles.org}Nombre" de origen y de "{http://xmlns.oracle.com/TPSoaMediator/MediatorCRUD/BPELUpdate}nombre" de destino de QName distinto puede generar un XML no válido en función de XSD en caso de un nodo sin hojas. Verifíquelo manualmente si es necesario</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>Mediators/MediatorRoles.mplan</file>
+      <name>Mediators/MediatorRoles.mplan</name>
+      <fix/>
+      <msg>La asignación de "{http://www.exampleRoles.org}ID_Padre" de origen y de "{http://xmlns.oracle.com/TPSoaMediator/MediatorCRUD/BPELUpdate}id_padre" de destino de QName distinto puede generar un XML no válido en función de XSD en caso de un nodo sin hojas. Verifíquelo manualmente si es necesario</msg>
+   </Fault>
+</Faults>

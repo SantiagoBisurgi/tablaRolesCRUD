@@ -1,0 +1,81 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<!--
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  Oracle JDeveloper BPEL Designer 
+  
+  Created: Mon Sep 28 15:00:42 ART 2020
+  Author:  gonza
+  Type: BPEL 2.0 Process
+  Purpose: One Way BPEL Process
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-->
+<process name="BPELInsert"
+               targetNamespace="http://xmlns.oracle.com/TPSoaMediator/MediatorCRUD/BPELInsert"
+               xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+               xmlns:client="http://xmlns.oracle.com/TPSoaMediator/MediatorCRUD/BPELInsert"
+               xmlns:ora="http://schemas.oracle.com/xpath/extension"
+               xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+               xmlns:ui="http://xmlns.oracle.com/soa/designer"
+               xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+         xmlns:ns1="http://xmlns.oracle.com/pcbpel/adapter/db/TPSoaMediator/MediatorCRUD/dbRoles"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:ns2="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbRoles">
+
+  <import ui:processWSDL="true" namespace="http://xmlns.oracle.com/TPSoaMediator/MediatorCRUD/BPELInsert" location="../WSDLs/BPELInsert.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+  <!-- 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      PARTNERLINKS                                                      
+      List of services participating in this BPEL process               
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  --> 
+  <partnerLinks>
+    <!-- 
+      The 'client' role represents the requester of this service. It is 
+      used for callback. The location and correlation information associated
+      with the client role are automatically set using WS-Addressing.
+    -->
+    <partnerLink name="bpelinsert_client" partnerLinkType="client:BPELInsert" myRole="BPELInsertProvider"/>
+    <partnerLink name="dbRoles" partnerLinkType="ns1:dbRoles_plt" partnerRole="dbRoles_role"/>
+  </partnerLinks>
+
+  <!-- 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      VARIABLES                                                        
+      List of messages and XML documents used within this BPEL process 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  -->
+  <variables>
+    <!-- Reference to the message passed as input during initiation -->
+    <variable name="inputVariable" messageType="client:BPELInsertRequestMessage"/>
+    <variable name="InvokeInsert_insert_InputVariable" messageType="ns1:RolesCollection_msg"/>
+  </variables>
+
+  <!-- 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+     ORCHESTRATION LOGIC                                               
+     Set of activities coordinating the flow of messages across the    
+     services integrated within this business process                  
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  -->
+  <sequence name="main">
+
+    <!-- Receive input from requestor. (Note: This maps to operation defined in BPELInsert.wsdl) -->
+    <receive name="receiveInput" partnerLink="bpelinsert_client" portType="client:BPELInsert" operation="process" variable="inputVariable" createInstance="yes"/>
+    <assign name="Assign1">
+      <copy>
+        <from>$inputVariable.payload/client:id</from>
+        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$InvokeInsert_insert_InputVariable.RolesCollection/ns2:Roles/ns2:id</to>
+      </copy>
+      <copy>
+        <from>$inputVariable.payload/client:nombre</from>
+        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$InvokeInsert_insert_InputVariable.RolesCollection/ns2:Roles/ns2:nombre</to>
+      </copy>
+      <copy>
+        <from>$inputVariable.payload/client:id_padre</from>
+        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$InvokeInsert_insert_InputVariable.RolesCollection/ns2:Roles/ns2:rolIdPadre</to>
+      </copy>
+    </assign>
+    <invoke name="InvokeInsert" partnerLink="dbRoles" portType="ns1:dbRoles_ptt"
+            operation="insert" inputVariable="InvokeInsert_insert_InputVariable" bpelx:invokeAsDetail="no"/>
+  </sequence>
+</process>

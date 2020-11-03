@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dgm:gDiagram xmlns:dgm="http://xmlns.oracle.com/sca/soadgm">
+    <dgm:gService name="MediatorRoles_ep">
+        <dgm:body borderWidth="2" arcRad="20" X="21" Y="146" width="137" height="84">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="11" Y="139" width="156" height="98">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:outputPort name="MediatorRoles_ep" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/TPSoaMediator/MediatorCRUD/MediatorRoles#wsdl.interface(execute_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/soap_service_20x20.png" X="20" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>execute</dgm:item>
+        </dgm:operations>
+    </dgm:gService>
+    <dgm:gReference name="dbRoles">
+        <dgm:body borderWidth="2" arcRad="20" X="731" Y="127" width="136" height="144">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="721" Y="120" width="156" height="158">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="dbRoles" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/TPSoaMediator/MediatorCRUD/dbRoles#wsdl.interface(dbRoles_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/db_adapter_20x20.png" X="27" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>merge</dgm:item>
+            <dgm:item>insert</dgm:item>
+            <dgm:item>update</dgm:item>
+            <dgm:item>delete</dgm:item>
+            <dgm:item>dbRolesSelect</dgm:item>
+            <dgm:item>selectByPrimaryKey</dgm:item>
+        </dgm:operations>
+    </dgm:gReference>
+    <dgm:gComponent name="MediatorRoles">
+        <dgm:body borderWidth="2" arcRad="20" X="274" Y="131" width="130" height="136">
+            <dgm:borderColor r="128" g="92" b="148"/>
+            <dgm:lightBgColor r="208" g="169" b="227"/>
+            <dgm:darkBgColor r="183" g="132" b="212"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="264" Y="124" width="150" height="152">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="MediatorRoles" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/TPSoaMediator/MediatorCRUD/MediatorRoles#wsdl.interface(execute_ptt)"/>
+        <dgm:outputPort name="BPELSelect.bpelselect_client" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/TPSoaMediator/MediatorCRUD/BPELSelect#wsdl.interface(BPELSelect)"/>
+        <dgm:outputPort name="BPELDelete.bpeldelete_client" X="120" Y="40" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/TPSoaMediator/MediatorCRUD/BPELDelete#wsdl.interface(BPELDelete)"/>
+        <dgm:outputPort name="BPELUpdate.bpelupdate_client" X="120" Y="65" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/TPSoaMediator/MediatorCRUD/BPELUpdate#wsdl.interface(BPELUpdate)"/>
+        <dgm:outputPort name="BPELInsert.bpelinsert_client" X="120" Y="90" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/TPSoaMediator/MediatorCRUD/BPELInsert#wsdl.interface(BPELInsert)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/mediator/resource/image/mediator_20x20.png" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="BPELInsert">
+        <dgm:body borderWidth="2" arcRad="20" X="488" Y="311" width="130" height="61">
+            <dgm:borderColor r="69" g="113" b="140"/>
+            <dgm:lightBgColor r="166" g="208" b="230"/>
+            <dgm:darkBgColor r="99" g="162" b="201"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="478" Y="304" width="150" height="77">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="bpelinsert_client" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/TPSoaMediator/MediatorCRUD/BPELInsert#wsdl.interface(BPELInsert)"/>
+        <dgm:outputPort name="dbRoles" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/TPSoaMediator/MediatorCRUD/dbRoles#wsdl.interface(dbRoles_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/bpel/shared/plugins/resources/images/soa/process_20x20.png" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="BPELSelect">
+        <dgm:body borderWidth="2" arcRad="20" X="488" Y="26" width="130" height="61">
+            <dgm:borderColor r="69" g="113" b="140"/>
+            <dgm:lightBgColor r="166" g="208" b="230"/>
+            <dgm:darkBgColor r="99" g="162" b="201"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="478" Y="19" width="150" height="77">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="bpelselect_client" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/TPSoaMediator/MediatorCRUD/BPELSelect#wsdl.interface(BPELSelect)"/>
+        <dgm:outputPort name="dbRoles" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/TPSoaMediator/MediatorCRUD/dbRoles#wsdl.interface(dbRoles_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/bpel/shared/plugins/resources/images/soa/process_20x20.png" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="BPELDelete">
+        <dgm:body borderWidth="2" arcRad="20" X="488" Y="121" width="130" height="61">
+            <dgm:borderColor r="69" g="113" b="140"/>
+            <dgm:lightBgColor r="166" g="208" b="230"/>
+            <dgm:darkBgColor r="99" g="162" b="201"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="478" Y="114" width="150" height="77">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="bpeldelete_client" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/TPSoaMediator/MediatorCRUD/BPELDelete#wsdl.interface(BPELDelete)"/>
+        <dgm:outputPort name="dbRoles" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/TPSoaMediator/MediatorCRUD/dbRoles#wsdl.interface(dbRoles_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/bpel/shared/plugins/resources/images/soa/process_20x20.png" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="BPELUpdate">
+        <dgm:body borderWidth="2" arcRad="20" X="488" Y="216" width="130" height="61">
+            <dgm:borderColor r="69" g="113" b="140"/>
+            <dgm:lightBgColor r="166" g="208" b="230"/>
+            <dgm:darkBgColor r="99" g="162" b="201"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="478" Y="209" width="150" height="77">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="bpelupdate_client" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/TPSoaMediator/MediatorCRUD/BPELUpdate#wsdl.interface(BPELUpdate)"/>
+        <dgm:outputPort name="dbRoles" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/TPSoaMediator/MediatorCRUD/dbRoles#wsdl.interface(dbRoles_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/bpel/shared/plugins/resources/images/soa/process_20x20.png" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gWireLink source="MediatorRoles_ep" target="MediatorRoles/MediatorRoles" width="2">
+        <dgm:gSegment X1="168" Y1="156" X2="264" Y2="156"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="BPELInsert/dbRoles" target="dbRoles" width="2">
+        <dgm:gSegment X1="628" Y1="336" X2="682" Y2="336"/>
+        <dgm:gSegment X1="682" Y1="336" X2="682" Y2="137"/>
+        <dgm:gSegment X1="682" Y1="137" X2="721" Y2="137"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="MediatorRoles/BPELSelect.bpelselect_client" target="BPELSelect/bpelselect_client" width="2">
+        <dgm:gSegment X1="414" Y1="156" X2="439" Y2="156"/>
+        <dgm:gSegment X1="439" Y1="156" X2="439" Y2="51"/>
+        <dgm:gSegment X1="439" Y1="51" X2="478" Y2="51"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="BPELSelect/dbRoles" target="dbRoles" width="2">
+        <dgm:gSegment X1="628" Y1="51" X2="697" Y2="51"/>
+        <dgm:gSegment X1="697" Y1="51" X2="697" Y2="137"/>
+        <dgm:gSegment X1="697" Y1="137" X2="721" Y2="137"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="BPELDelete/dbRoles" target="dbRoles" width="2">
+        <dgm:gSegment X1="628" Y1="146" X2="652" Y2="146"/>
+        <dgm:gSegment X1="652" Y1="146" X2="652" Y2="137"/>
+        <dgm:gSegment X1="652" Y1="137" X2="721" Y2="137"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="BPELUpdate/dbRoles" target="dbRoles" width="2">
+        <dgm:gSegment X1="628" Y1="241" X2="667" Y2="241"/>
+        <dgm:gSegment X1="667" Y1="241" X2="667" Y2="137"/>
+        <dgm:gSegment X1="667" Y1="137" X2="721" Y2="137"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="MediatorRoles/BPELDelete.bpeldelete_client" target="BPELDelete/bpeldelete_client" width="2">
+        <dgm:gSegment X1="414" Y1="181" X2="454" Y2="181"/>
+        <dgm:gSegment X1="454" Y1="181" X2="454" Y2="146"/>
+        <dgm:gSegment X1="454" Y1="146" X2="478" Y2="146"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="MediatorRoles/BPELUpdate.bpelupdate_client" target="BPELUpdate/bpelupdate_client" width="2">
+        <dgm:gSegment X1="414" Y1="206" X2="454" Y2="206"/>
+        <dgm:gSegment X1="454" Y1="206" X2="454" Y2="241"/>
+        <dgm:gSegment X1="454" Y1="241" X2="478" Y2="241"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="MediatorRoles/BPELInsert.bpelinsert_client" target="BPELInsert/bpelinsert_client" width="2">
+        <dgm:gSegment X1="414" Y1="231" X2="439" Y2="231"/>
+        <dgm:gSegment X1="439" Y1="231" X2="439" Y2="336"/>
+        <dgm:gSegment X1="439" Y1="336" X2="478" Y2="336"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+</dgm:gDiagram>

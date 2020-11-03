@@ -1,0 +1,85 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<!--
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  Oracle JDeveloper BPEL Designer 
+  
+  Created: Mon Sep 28 15:13:47 ART 2020
+  Author:  gonza
+  Type: BPEL 2.0 Process
+  Purpose: One Way BPEL Process
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-->
+<process name="BPELUpdate"
+               targetNamespace="http://xmlns.oracle.com/TPSoaMediator/MediatorCRUD/BPELUpdate"
+               xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+               xmlns:client="http://xmlns.oracle.com/TPSoaMediator/MediatorCRUD/BPELUpdate"
+               xmlns:ora="http://schemas.oracle.com/xpath/extension"
+               xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+               xmlns:ui="http://xmlns.oracle.com/soa/designer"
+               xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+         xmlns:ns1="http://xmlns.oracle.com/pcbpel/adapter/db/TPSoaMediator/MediatorCRUD/dbRoles"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:ns2="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbRoles">
+
+  <import ui:processWSDL="true" namespace="http://xmlns.oracle.com/TPSoaMediator/MediatorCRUD/BPELUpdate" location="../WSDLs/BPELUpdate.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+  <!-- 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      PARTNERLINKS                                                      
+      List of services participating in this BPEL process               
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  --> 
+  <partnerLinks>
+    <!-- 
+      The 'client' role represents the requester of this service. It is 
+      used for callback. The location and correlation information associated
+      with the client role are automatically set using WS-Addressing.
+    -->
+    <partnerLink name="bpelupdate_client" partnerLinkType="client:BPELUpdate" myRole="BPELUpdateProvider"/>
+    <partnerLink name="dbRoles" partnerLinkType="ns1:dbRoles_plt" partnerRole="dbRoles_role"/>
+  </partnerLinks>
+
+  <!-- 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      VARIABLES                                                        
+      List of messages and XML documents used within this BPEL process 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  -->
+  <variables>
+    <!-- Reference to the message passed as input during initiation -->
+    <variable name="inputVariable" messageType="client:BPELUpdateRequestMessage"/>
+    <variable name="Invoke1_merge_InputVariable" messageType="ns1:RolesCollection_msg"/>
+  </variables>
+  <faultHandlers>
+    <catchAll>
+      <rethrow name="Rethrow1"/>
+    </catchAll>
+  </faultHandlers>
+  <!-- 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+     ORCHESTRATION LOGIC                                               
+     Set of activities coordinating the flow of messages across the    
+     services integrated within this business process                  
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  -->
+  <sequence name="main">
+
+    <!-- Receive input from requestor. (Note: This maps to operation defined in BPELUpdate.wsdl) -->
+    <receive name="receiveInput" partnerLink="bpelupdate_client" portType="client:BPELUpdate" operation="process" variable="inputVariable" createInstance="yes"/>
+    <assign name="Assign1">
+      <copy>
+        <from>$inputVariable.payload/client:id</from>
+        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$Invoke1_merge_InputVariable.RolesCollection/ns2:Roles/ns2:id</to>
+      </copy>
+      <copy>
+        <from>$inputVariable.payload/client:nombre</from>
+        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$Invoke1_merge_InputVariable.RolesCollection/ns2:Roles/ns2:nombre</to>
+      </copy>
+      <copy>
+        <from>$inputVariable.payload/client:id_padre</from>
+        <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$Invoke1_merge_InputVariable.RolesCollection/ns2:Roles/ns2:rolIdPadre</to>
+      </copy>
+    </assign>
+    <invoke name="Invoke1" partnerLink="dbRoles" portType="ns1:dbRoles_ptt"
+            operation="update" inputVariable="Invoke1_merge_InputVariable" bpelx:invokeAsDetail="no"/>
+  </sequence>
+</process>
